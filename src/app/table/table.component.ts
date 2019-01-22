@@ -13,6 +13,7 @@ export class TableComponent implements OnInit {
     @Input() headers: string[];
     @Input() datas: Array<Object>;
     @Input() ids: string[];
+    filter: Object;
     
     ngOnInit() {
         
