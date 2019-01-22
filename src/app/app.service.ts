@@ -2,7 +2,8 @@ import {Injectable} from "@angular/core";
 import {DATA_API} from "./app.api";
 import { Http } from "@angular/http";
 import {Observable} from "rxjs/Observable";
-import "../../node_modules/rxjs/add/operator/map";
+//import "../../node_modules/rxjs/add/operator/map";
+import { map } from "rxjs/operators";
 
 @Injectable()
 export class AppService{
