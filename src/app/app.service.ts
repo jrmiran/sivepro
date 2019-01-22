@@ -8,9 +8,11 @@ import "../../node_modules/rxjs/add/operator/map";
 export class AppService{
     constructor(private http: Http){}
     
-    budgets(): Observable<Object[]>{
-        //return this.http.get(`${DATA_API}/test2.php/?function=getBudgets`).map(response => response.json())
-        return this.http.get(`${DATA_API}/query`).map(response => response.json())
+    callQuery(q: string): Observable<Object[]>{
+        return this.http.get(`${DATA_API}/` + q).map(response => response.json())
     }
     
+    budgets(): Observable<Object[]>{
+        return this.callQuery("query");
+    }
 }
