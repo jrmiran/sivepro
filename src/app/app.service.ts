@@ -9,7 +9,7 @@ export class AppService{
     constructor(private http: Http){}
     
     callQuery(q: string): Observable<Object[]>{
-        return this.http.get(`${DATA_API}/` + q).map(response => response.json())
+        return this.http.get(`${DATA_API}/` + q).map(response => response.json());
     }
     
     budgets(): Observable<Object[]>{
