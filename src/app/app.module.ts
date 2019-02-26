@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from "@angular/http";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
@@ -26,6 +26,14 @@ import { LoginComponent } from './login/login.component';
 import { BudgetTableComponent } from './budget/budget-table/budget-table.component';
 
 import { AppService } from './app.service';
+import { StartService } from './start.service';
+import { InputComponent } from './shared/input/input.component';
+import { RadioComponent } from './shared/radio/radio.component';
+
+import {MatFormFieldModule, MatAutocompleteModule, MatInputModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BudgetNewComponent } from './budget/budget-new/budget-new.component';
+
 
 @NgModule({
   declarations: [
@@ -43,18 +51,27 @@ import { AppService } from './app.service';
     PaginationLinkComponent,
     TableComponent,
     LoginComponent,
-    BudgetTableComponent
+    BudgetTableComponent,
+    InputComponent,
+    RadioComponent,
+    BudgetNewComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES),
     HttpModule,
     Ng2SearchPipeModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule,
   ],
   providers: [
-      AppService
+      AppService,
+      StartService
   ],
   bootstrap: [AppComponent]
 })

@@ -17,4 +17,8 @@ export class AppService{
     budgets(): Observable<Object[]>{
         return this.callQuery("query");
     }
+    
+    budgetItems(): Observable<Object[]>{
+        return this.callQuery("itens");
+    }
 }

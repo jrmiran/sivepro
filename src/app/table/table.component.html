@@ -1,16 +1,26 @@
 <h1 class="text-center display-5"> {{name}} </h1>
-<input class="form-control" type="text" name="search" [(ngModel)]="filter" placeholder="Digite sua busca">
+<input *ngIf="searchBar=='true'" class="form-control" type="text" name="search" [(ngModel)]="filter" placeholder="Digite sua busca">
 <table class="table table-hover">
-  <caption>{{name}}</caption>    
-  <thead>
-    <tr>
-      <th *ngFor="let header of headers" scope="col">{{header}}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let data of datas | filter:filter | paginate: {itemsPerPage: 10, currentPage: p}">
-        <td *ngFor="let id of ids; index as i"><span *ngIf="id == 'budgetId'"><a href="#">{{data[id]}}</a></span><span *ngIf="id != 'budgetId'">{{data[id]}}</span></td>
-    </tr>
-  </tbody>
+    <caption>{{name}}</caption>
+    <thead>
+        <tr>
+            <th *ngFor="let header of headers" scope="col">{{header}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of datas | filter:filter | paginate: {itemsPerPage: 10, currentPage: p}">
+            <td *ngFor="let id of ids; index as i">
+                <span *ngIf="id == 'budgetId'">
+                    <a href="#">{{data[id]}}</a>
+                </span>
+                <span *ngIf="id != 'budgetId'">
+                    {{data[id]}}
+                </span>
+            </td>
+            <td>
+                <a (click)="addBudgetItem(data['id'], data['descricao'])"><i class="fa fa-plus"></i></a>
+            </td>
+        </tr>
+    </tbody>
 </table>
 <pagination-controls class="text-center" (pageChange)="p = $event"></pagination-controls>
