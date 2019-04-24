@@ -34,6 +34,7 @@ export class BudgetNewComponent implements OnInit {
     enableButton: boolean;
     currentItem: number;
     createPdf = new CreatePdfComponent();
+    cbo: FormArray;
     
     
     test(){
@@ -44,6 +45,7 @@ export class BudgetNewComponent implements OnInit {
         this.places = this.places.slice(0,i).concat(this.places.slice(i+1,this.places.length));
         this.checks = this.checks.slice(0,i).concat(this.checks.slice(i+1,this.checks.length));
         (this.orderForm.get('checkBoxOption') as FormArray).removeAt(i);
+        this.cbo = (this.orderForm.get('checkBoxOption') as FormArray)
     }
     setDate(value: string){
         this.date = value;
@@ -63,6 +65,7 @@ export class BudgetNewComponent implements OnInit {
         this.checks.push(place);
         
         (this.orderForm.get('checkBoxOption') as FormArray).push(new FormControl(false));
+        this.cbo = (this.orderForm.get('checkBoxOption') as FormArray);
     }
     
     setValueCheckBox(i: number){
@@ -126,6 +129,8 @@ export class BudgetNewComponent implements OnInit {
             txtValor: this.formBuilder.control(''),
             checkBoxOption: this.buildComodos()
         })
+      
+      this.cbo = (this.orderForm.get('checkBoxOption') as FormArray);
       
       this.route.queryParams.subscribe(
         (queryParams: any) =>{

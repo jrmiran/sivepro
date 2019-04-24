@@ -43,7 +43,8 @@
                             <h3 class="box-title">Cômodos</h3>
                         </div>
 
-                        <div *ngFor="let item of orderForm.get('checkBoxOption').controls; let i = index" class="checkbox" formArrayName="checkBoxOption" (click)="setValue()">
+                        <!--<div *ngFor="let item of (orderForm.get('checkBoxOption') as FormArray).controls; let i = index" class="checkbox" formArrayName="checkBoxOption" (click)="setValue()">-->
+                        <div *ngFor="let item of cbo.controls; let i = index" class="checkbox" formArrayName="checkBoxOption" (click)="setValue()">
                             <label>
                                 <input (click)="setValueCheckBox(i)" type="checkbox" [formControlName]="i"> {{checks[i]}}
                             </label>
