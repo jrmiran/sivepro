@@ -36,7 +36,8 @@
         "./node_modules/admin-lte/plugins/timepicker/bootstrap-timepicker.min.css",
         "./node_modules/admin-lte/bower_components/select2/dist/css/select2.min.css",
         "./node_modules/admin-lte/dist/css/AdminLTE.min.css",
-        "./node_modules/admin-lte/dist/css/skins/_all-skins.min.css"           
+        "./node_modules/admin-lte/dist/css/skins/_all-skins.min.css" 
+        //"./node_modules/select2/dist/css/select2.min.css"
       ],
               //SCRIPTS
             "scripts": [
@@ -54,8 +55,10 @@
         "./node_modules/admin-lte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js",       
         "./node_modules/admin-lte/plugins/iCheck/icheck.min.js",                
         "./node_modules/admin-lte/bower_components/fastclick/lib/fastclick.js",
-        "./node_modules/admin-lte/dist/js/adminlte.js",        
-        "./src/script.js"        
+        "./node_modules/admin-lte/dist/js/adminlte.js",
+        "./node_modules/jspdf/dist/jspdf.min.js"        
+        //"./src/script.js"
+        //"./node_modules/select2/dist/js/select2.min.js"           
       ]
           },
 
@@ -117,12 +120,13 @@
         "./node_modules/admin-lte/plugins/timepicker/bootstrap-timepicker.min.css",
         "./node_modules/admin-lte/bower_components/select2/dist/css/select2.min.css",
         "./node_modules/admin-lte/dist/css/AdminLTE.min.css",
-        "./node_modules/admin-lte/dist/css/skins/_all-skins.min.css"           
+        "./node_modules/admin-lte/dist/css/skins/_all-skins.min.css"
+        //"./node_modules/select2/dist/css/select2.min.css"          
       ],
               //SCRIPTS
             "scripts": [
          "./node_modules/admin-lte/bower_components/jquery/dist/jquery.min.js",
-        "./node_modules/admin-lte/bower_components/bootstrap/dist/js/bootstrap.min.js",     
+        "./node_modules/admin-lte/bower_components/bootstrap/dist/js/bootstrap.min.js",
         "./node_modules/admin-lte/bower_components/select2/dist/js/select2.full.min.js", 
         "./node_modules/admin-lte/plugins/input-mask/jquery.inputmask.js", 
         "./node_modules/admin-lte/plugins/input-mask/jquery.inputmask.date.extensions.js",
@@ -135,8 +139,10 @@
         "./node_modules/admin-lte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js",       
         "./node_modules/admin-lte/plugins/iCheck/icheck.min.js",                
         "./node_modules/admin-lte/bower_components/fastclick/lib/fastclick.js",
-        "./node_modules/admin-lte/dist/js/adminlte.js",        
-        "./src/script.js"   
+        "./node_modules/admin-lte/dist/js/adminlte.js",
+        "./node_modules/jspdf/dist/jspdf.min.js"        
+        //"./src/script.js"
+        //"./node_modules/select2/dist/js/select2.min.js"        
       ],
               
             "assets": [

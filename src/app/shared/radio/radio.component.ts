@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, forwardRef } from '@angular/core';
+import { Component, OnInit, Input, forwardRef} from '@angular/core';
 import {RadioOption} from './radio-option.model';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {StartService} from '../../start.service';
 
 @Component({
   selector: 'sivp-radio',
@@ -14,14 +15,15 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
         }
     ]
 })
-export class RadioComponent implements OnInit, ControlValueAccessor {
+export class RadioComponent implements OnInit, ControlValueAccessor{
     
     @Input() options: RadioOption[]
     value: any;
     onChange: any;
-    constructor() { }
+    constructor(private start: StartService) { }
 
   ngOnInit() {
+      //this.start.start();
   }
 
     setValue(value: any){
@@ -40,6 +42,5 @@ export class RadioComponent implements OnInit, ControlValueAccessor {
     registerOnTouched(fn: any){
         
     }
-    
     
 }

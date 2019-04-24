@@ -19,6 +19,7 @@ import { MenuItemComponent } from './menu/menu-item/menu-item.component';
 import { SubMenuItemComponent } from './menu/menu-item/sub-menu-item/sub-menu-item.component';
 import { OrcamentoComponent } from './orcamento/orcamento.component';
 import { BudgetComponent } from './budget/budget.component';
+import { BudgetService } from './budget/budget.service';
 
 import { PaginationLinkComponent } from './pagination-link/pagination-link.component';
 import { TableComponent } from './table/table.component';
@@ -30,9 +31,17 @@ import { StartService } from './start.service';
 import { InputComponent } from './shared/input/input.component';
 import { RadioComponent } from './shared/radio/radio.component';
 
-import {MatFormFieldModule, MatAutocompleteModule, MatInputModule} from '@angular/material';
+import {MatFormFieldModule, MatAutocompleteModule, MatInputModule, MatDatepickerModule, MatNativeDateModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { BudgetNewComponent } from './budget/budget-new/budget-new.component';
+import { CheckComponent } from './shared/check/check.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { Select2Module } from 'ng2-select2';
+import { AutoCompleteInputTextBoxComponent } from './shared/auto-complete-input-text-box/auto-complete-input-text-box.component';
+import { PrimaryBoxComponent } from './shared/primary-box/primary-box.component';
+import { DatePickerComponent } from './shared/date-picker/date-picker.component';
+import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
+import { CreatePdfComponent } from './create-pdf/create-pdf.component';
 
 
 @NgModule({
@@ -54,7 +63,12 @@ import { BudgetNewComponent } from './budget/budget-new/budget-new.component';
     BudgetTableComponent,
     InputComponent,
     RadioComponent,
-    BudgetNewComponent
+    BudgetNewComponent,
+    CheckComponent,
+    AutoCompleteInputTextBoxComponent,
+    PrimaryBoxComponent,
+    DatePickerComponent,
+    CreatePdfComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,10 +82,16 @@ import { BudgetNewComponent } from './budget/budget-new/budget-new.component';
     MatFormFieldModule,
     MatInputModule,
     MatAutocompleteModule,
+    NgbModule,
+    Select2Module,
+    MatDatepickerModule,
+    MatNativeDateModule  
   ],
   providers: [
       AppService,
-      StartService
+      StartService,
+      BudgetService,
+      {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
   ],
   bootstrap: [AppComponent]
 })

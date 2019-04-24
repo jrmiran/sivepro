@@ -3,8 +3,6 @@ import {DATA_API} from "./app.api";
 import { Http } from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import "rxjs/add/operator/map";
-//import "../../node_modules/rxjs/add/operator/map";
-//import { map } from "rxjs/operators";
 
 @Injectable()
 export class AppService{
@@ -19,6 +17,7 @@ export class AppService{
     }
     
     budgetItems(): Observable<Object[]>{
-        return this.callQuery("itens");
+        return this.callQuery("items");
     }
+    
 }

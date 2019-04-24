@@ -1,1 +1,5 @@
-export interface Budget{}
+export interface BudgetModel{
+    client: string;
+    date: string;
+    type: string;
+}
