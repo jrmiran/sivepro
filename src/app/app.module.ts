@@ -42,6 +42,10 @@ import { PrimaryBoxComponent } from './shared/primary-box/primary-box.component'
 import { DatePickerComponent } from './shared/date-picker/date-picker.component';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import { CreatePdfComponent } from './create-pdf/create-pdf.component';
+import { AutoCompleteComponent } from './shared/auto-complete/auto-complete.component';
+import {NgxMaskModule} from 'ngx-mask';
+import { TextMaskModule } from 'angular2-text-mask';
+import { CurrencyMaskModule } from "ng2-currency-mask";
 
 
 @NgModule({
@@ -69,6 +73,7 @@ import { CreatePdfComponent } from './create-pdf/create-pdf.component';
     PrimaryBoxComponent,
     DatePickerComponent,
     CreatePdfComponent,
+    AutoCompleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,7 +90,10 @@ import { CreatePdfComponent } from './create-pdf/create-pdf.component';
     NgbModule,
     Select2Module,
     MatDatepickerModule,
-    MatNativeDateModule  
+    MatNativeDateModule,
+    NgxMaskModule.forRoot(),
+    TextMaskModule,
+    CurrencyMaskModule
   ],
   providers: [
       AppService,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AppService} from "../../app.service";
+import { interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'sivp-budget-table',
@@ -11,8 +13,27 @@ export class BudgetTableComponent implements OnInit {
   constructor(private appService: AppService ) { }
 
     buds: Object[];
+    flag: boolean = true;
+    n: number;
     
     ngOnInit() {
-        this.appService.budgets().subscribe(budgets => this.buds = budgets);
+       this.n = 1; this.appService.budgets().subscribe(budgets => this.buds = budgets);
+        
+        interval(1000).pipe(
+            map((x) => {
+                console.log(this.n);
+                this.n ++;
+            })
+        );
+        console.log(this.n);
+        
+       /* while(this.flag){
+            if (this.buds != null) {
+                console.log("TEM ALGO");
+                this.flag = false;
+            } else{
+                console.log("NADA");
+            }
+        }*/
     }
 }

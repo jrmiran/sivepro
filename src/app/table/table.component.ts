@@ -54,11 +54,14 @@ export class TableComponent implements OnInit {
             medida: "",
             comodo: comodo,
             necessario: "",
-            valor: ""
+            valorUnitario: 0,
+            valorTotal: 0,
+            desconto: 0,
+            valorComDesconto: 0    
         }
         bc.addItemBudget(bb, bncc);
         });
-        console.log(this.comodos);
+        //console.log(this.comodos);
         
     }
     
@@ -67,7 +70,7 @@ export class TableComponent implements OnInit {
         if(this.budgetTable){
             this.bnc.clickRow(i);
         }else{
-            console.log("OK");
+            //console.log("OK");
         }
     }
     

@@ -3,6 +3,7 @@ import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {OptionModel} from './auto-complete-input-text-box.model';
 
 
 @Component({
@@ -24,6 +25,7 @@ export class AutoCompleteInputTextBoxComponent implements OnInit, ControlValueAc
     filteredOptions: Observable<string[]>;
     value: any;
     onChange: any;
+    
     
     ngOnInit() {
         this.filteredOptions = this.myControl.valueChanges.pipe(

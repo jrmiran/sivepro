@@ -6,5 +6,8 @@ export interface BudgetNew{
     medida: string;
     comodo: string;
     necessario: string;
-    valor: string;
+    valorUnitario: number;
+    valorTotal: number;
+    desconto: number;
+    valorComDesconto: number;
 }
